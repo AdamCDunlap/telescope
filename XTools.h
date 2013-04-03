@@ -48,6 +48,8 @@ class XTools
         static Atom WM_STATE;
         static Atom WM_NAME;
         static Atom _NET_WM_ICON;
+        static Atom WM_PROTOCOLS;
+        static Atom WM_DELETE_WINDOW;
 
         static void init(Display *dpy);
 

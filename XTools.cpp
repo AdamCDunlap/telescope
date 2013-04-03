@@ -47,6 +47,8 @@ Atom XTools::_NET_CLOSE_WINDOW;
 Atom XTools::WM_STATE;
 Atom XTools::WM_NAME;
 Atom XTools::_NET_WM_ICON;
+Atom XTools::WM_PROTOCOLS;
+Atom XTools::WM_DELETE_WINDOW;
 
 
 #define INIT_ATOM(dpy, ATOMNAME)        ATOMNAME = XInternAtom((dpy), #ATOMNAME, 0L)
@@ -71,6 +73,8 @@ void XTools::init(Display *dpy)
     INIT_ATOM(dpy, WM_STATE);
     INIT_ATOM(dpy, WM_NAME);
     INIT_ATOM(dpy, _NET_WM_ICON);
+    INIT_ATOM(dpy, WM_PROTOCOLS);
+    INIT_ATOM(dpy, WM_DELETE_WINDOW);
 
     _prevErrorHandler = XSetErrorHandler(errorHandler);
 }
@@ -262,19 +266,14 @@ void XTools::closeWindow(Window window)
 {
     XEvent event;
 
-    event.xclient.type = ClientMessage;
-    event.xclient.serial = 0;
-    event.xclient.send_event = True;
-    event.xclient.message_type = _NET_CLOSE_WINDOW;
+    event.type = ClientMessage;
     event.xclient.window = window;
+    event.xclient.message_type = WM_PROTOCOLS;
     event.xclient.format = 32;
-    event.xclient.data.l[0] = 0;
-    event.xclient.data.l[1] = 0;
-    event.xclient.data.l[2] = 0;
-    event.xclient.data.l[3] = 0;
-    event.xclient.data.l[4] = 0;
+    event.xclient.data.l[0] = WM_DELETE_WINDOW;
+    event.xclient.data.l[1] = CurrentTime;
+    XSendEvent(_dpy, window, False, NoEventMask, &event);
 
-    XSendEvent(_dpy, DefaultRootWindow(_dpy), False, SubstructureRedirectMask | SubstructureNotifyMask, &event);
 }
 
 
