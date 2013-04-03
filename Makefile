@@ -88,7 +88,9 @@ clean:
 
 
 install: telescope telescope-svc $(SHAREFILES) $(CONFFILES)
+	mkdir -p $(DESTDIR)/usr/bin/
 	cp telescope $(DESTDIR)/usr/bin/
 	mkdir -p $(DESTDIR)/usr/share/telescope
 	cp -r $(SHAREFILES) $(DESTDIR)/usr/share/telescope/
+	mkdir -p $(DESTDIR)/etc/
 	cp $(CONFFILES) $(DESTDIR)/etc/
