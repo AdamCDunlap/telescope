@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Telescope Launcher
+Icon=qgn_grid_tasknavigator_others
+X-Path=liblaunchersbapplet.so
+X-Settings=/usr/lib/hildon-desktop/libhd-applications-menu-settings.so
+Type=default
+Category=permanent

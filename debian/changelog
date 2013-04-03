@@ -1,0 +1,266 @@
+telescope (2.0~rc14) unstable; urgency=low
+
+  * Fixed bug: Telescope may crash when .desktop file changed
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  28 Jun 2011 23:50:00 +0300
+
+telescope (2.0~rc13) unstable; urgency=low
+
+  * Fixed bug with empty applications.menu
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  27 Jun 2011 22:20:00 +0300
+
+telescope (2.0~rc12) unstable; urgency=low
+
+  * Fixed bug that made telescope crashing if ~/.osso/menus/applications.menu is missing. Now /etc/xdg/menus/applications.menu will be used in this case.
+
+  * New icon from Kroll!
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  25 Apr 2011 16:39:00 +0300
+
+telescope (2.0~rc11) unstable; urgency=low
+
+  * Now user can select icons for categories using longtap
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  1 Mar 2011 14:36:00 +0300
+
+telescope (2.0~rc10) unstable; urgency=low
+
+  * Fixed Launcher panel in portrait mode
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  26 Feb 2011 14:52:00 +0300
+
+telescope (2.0~rc9) unstable; urgency=low
+
+  * Internal refactoring of image handling code
+
+  * New appearance of bottom bar in Launcher
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  25 Feb 2011 11:57:00 +0300
+
+telescope (2.0~rc8) unstable; urgency=low
+
+  * Left-right buttons in Launcher were replaced by bottom bar with buttons for each section
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  23 Feb 2011 22:05:00 +0300
+
+telescope (2.0~rc7) unstable; urgency=low
+
+  * Fixed zombie processes
+
+  * Added globalpress keymapping event
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  22 Feb 2011 23:07:00 +0300
+
+telescope (2.0~rc6) unstable; urgency=low
+
+  * Fixed synchronization of DBus and Xlib threads. Now DBus thread doesn't show windows by itself, but sends ClientMessage to X thread instead
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  8 Oct 2010 13:56:00 +0400
+
+telescope (2.0~rc5) unstable; urgency=low
+
+  * Sections now draw itself on the fly without creating offscreen pixmap for each section. Instead, offscreen pixmaps are created for every icon.
+
+  * Portrait mode support for Launcher
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail>  1 Oct 2010 16:16:00 +0400
+
+telescope (2.0~rc4) unstable; urgency=low
+
+  * Fixed bug: When SystemUI is disabled Launcher window doesn't hides properly
+
+  * Reduced flickering while switching between Telescope and Launcher with hot key
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  17 Sep 2010 11:33:00 +0300
+
+telescope (2.0~rc3) unstable; urgency=low
+
+  * launcher.disable option in telescope.conf for disabling app launcher
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  11 Sep 2010 13:08:00 +0300
+
+telescope (2.0~rc2) unstable; urgency=low
+
+  * XftFontMatch & XftDestroyPattern replaced with XftFontOpen, fixing some strange segfaults
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  09 Aug 2010 15:19:00 +0300
+
+telescope (2.0~rc1) unstable; urgency=low
+
+  * Telescope merged with Launcher from Andry Gunawan
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  07 Aug 2010 23:08:00 +0300
+
+telescope (1.0.3) unstable; urgency=low
+
+  * Fix with screen rotation
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  27 Jul 2010 21:20:00 +0300
+
+telescope (1.0.2) unstable; urgency=low
+
+  * In rare cases when telescope is unable to grab a screenshot, it will draw gray checkers instead of it
+
+  * Now telescope can not be called when no windows opened (strange, but some users don't like to see their nice wallpapers)
+
+  * XTools now can extract window's icon from _NET_WM_ICON propery, but this functionality is not used
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  27 Jul 2010 15:22:00 +0300
+
+telescope (1.0.1) stable; urgency=low
+
+  * Added install notice about Home key
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  14 Jul 2010 23:35:00 +0300
+
+telescope (1.0) stable; urgency=low
+
+  * The copy of 0.2.9
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  14 Jul 2010 13:55:00 +0300
+
+telescope (0.2.9) unstable; urgency=low
+
+  * D-Bus support. Telescope now can be called by calling org.telescope bus
+    with path /Telescope and method org.telescope.Telescope.Show (and Hide)
+
+  * Workaround for liqbase apps. They will be iconified before showing
+    Telescope
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  09 Jul 2010 15:50:00 +0300
+
+telescope (0.2.8.1) unstable; urgency=low
+
+  * Telescope activating key can be changed via telescope.conf
+
+  * Little change in how Telescope grabs its activating key
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  06 Jul 2010 14:55:00 +0300
+
+telescope (0.2.8) unstable; urgency=low
+
+  * Huge code refactoring without visible changes for user
+
+  * show.desktop.thumbnail and show.desktop.iconify config options
+    for Xlab
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  29 Jun 2010 17:30:00 +0300
+
+telescope (0.2.7.3) unstable; urgency=low
+
+  * Another fix for osso mediaplayer
+
+  * Keybindings are loaded at first use (hack for maemo)
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  07 Jun 2010 16:55:00 +0300
+
+telescope (0.2.7.2) unstable; urgency=low
+
+  * Fix for osso mediaplayer
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  02 Jun 2010 17:15:00 +0300
+
+telescope (0.2.7.1) unstable; urgency=low
+
+  * Fixed #5771 "Telescope does not works with plain color backgrounds"
+
+  * 'selection.disabled' option for disabling all window selection stuff
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky>  01 Jun 2010 09:00:00 +0300
+
+telescope (0.2.7) unstable; urgency=low
+
+  * Fixed handling of non-conformant windows, for example, SDL games
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky>  31 May 2010 16:00:00 +0300
+
+telescope (0.2.6.2) unstable; urgency=low
+
+  * Fixed #5779 "Window titles are not displaying sometimes"
+
+  * Fixed #5786 "Window previews are sometimes invalid"
+
+  * Fixed #5784 "Active window is not highlighted sometimes"
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky>  22 May 2010 22:40:00 +0300
+
+telescope (0.2.6.1) unstable; urgency=low
+
+  * Several files was lost from installation, sorry
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  12 May 2010 16:35:00 +0300
+
+telescope (0.2.6) unstable; urgency=low
+
+  * Support for mapping actions on hardware keys, configurable with /etc/telescope.keys
+
+  * Windows now can be selected with hardware keys
+
+  * New design of window decorators
+
+  * Telescope now works fine in portrait mode and independant of screen resolution
+
+  * Large code refactoring (but less than neccessary :( )
+
+  * Minor bugfixes
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  12 May 2010 10:25:00 +0300
+
+telescope (0.2.5) unstable; urgency=low
+
+  * Section of package changed to `utilities' to match Fremantle's guidelines
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  28 Apr 2010 13:50:00 +0300
+
+telescope (0.2.4) unstable; urgency=low
+
+  * Fixed empty thumbnails bug (#5552)
+
+  * Thumbnail made smaller then it is only one (#5631)
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  28 Apr 2010 10:40:00 +0300
+
+telescope (0.2.3) unstable; urgency=low
+
+  * Fixed bugs with wallpaper loading
+
+  * Support for wallpapers greater than screen
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  21 Apr 2010 20:50:00 +0300
+
+telescope (0.2.2) unstable; urgency=low
+
+  * Fixed loading background with non-ASCII chars in filename
+
+  * Telescope now obeys CachedAs= field in hildon's home-background.conf
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  19 Apr 2010 22:25:00 +0300
+
+telescope (0.2.1) unstable; urgency=low
+
+  * Fixed bug with black background
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  17 Apr 2010 17:00:00 +0300
+
+telescope (0.2) unstable; urgency=low
+
+  * New decoration for window previews
+
+  * Some bugs fixed
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  16 Apr 2010 22:25:00 +0300
+
+telescope (0.1.1) unstable; urgency=low
+
+  * Automated install scripts
+
+  * Headers for window previews
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  12 Apr 2010 23:55:00 +0300
+
+telescope (0.1) unstable; urgency=low
+
+  * Initial version
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  06 Apr 2010 08:40:00 +0300

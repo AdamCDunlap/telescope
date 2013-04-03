@@ -1,0 +1,9 @@
+Telescope task switcher changes the behavior of Home key (one with
+house icon on N800 and with two overlapping squares on N810).
+Press your Home key and you will see live thumbnails of opened
+windows. Simply touch one of them to switch between applications.
+
+Press Home key again and you will get fullscreen android-style
+application launcher with icons.
+
+Enjoy!

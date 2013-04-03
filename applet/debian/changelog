@@ -1,0 +1,17 @@
+telescope-applet (0.2.1) unstable; urgency=low
+
+  * Minor fixed
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  14 Oct 2010 14:20:00 +0400
+
+telescope-applet (0.2) unstable; urgency=low
+
+  * Added statusbar & navigator applets for Launcher
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  18 Aug 2010 08:40:00 +0300
+
+telescope-applet (0.1) unstable; urgency=low
+
+  * Initial build of telescope-applet
+
+ -- Ilya Skriblovsky <Ilya.Skriblovsky@gmail.com>  27 Jul 2010 12:20:00 +0300

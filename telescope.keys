@@ -1,0 +1,9 @@
+press(F5): internal(selectNext)
+press(Escape): internal(switchToSelected)
+press(F4): internal(switchToSelected)
+
+press(Right):  internal(selectRight)
+press(Left):   internal(selectLeft)
+press(Up):     internal(selectUp)
+press(Down):   internal(selectDown)
+press(Return): internal(switchToSelected)

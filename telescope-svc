@@ -1,0 +1,48 @@
+#! /bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON="/usr/bin/telescope"
+NAME=telescope-svc
+DESC="Telescope task switcher"
+
+# abort if no executable exists
+
+test -x $DAEMON || exit 0
+
+set -e
+
+if [ -e /etc/osso-af-init/af-defines.sh ]
+then
+    source /etc/osso-af-init/af-defines.sh
+else
+    echo "/etc/osso-af-init/af-defines.sh not found!"
+    exit 1
+fi
+
+case "$1" in
+start)
+	echo -n "Starting $DESC: "
+	#start-stop-daemon --start --quiet $RUNUSER --exec $DAEMON &
+	su -c "dsmetool -t $DAEMON" user
+	echo "$NAME"
+	;;
+
+stop)
+	echo -n "Stopping $DESC: "
+	#start-stop-daemon --stop --quiet $RUNUSER --exec $DAEMON	
+	dsmetool -k $DAEMON
+	echo "$NAME"
+	;;
+
+restart|force-reload)
+	"$0" stop
+	"$0" start
+	;;
+
+*)
+	N=/etc/init.d/$NAME
+	printf "Usage: $N {start|stop|restart|force-reload}\n" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,10 @@
+#!/bin/sh
+echo '* Stopping Telescope...'
+/etc/init.d/telescope-svc stop
+echo '* Removing Telescope service...'
+update-rc.d -f telescope-svc remove
+echo '* Restoring mce.ini'
+mv /etc/mce/mce.ini.telescope.bak /etc/mce/mce.ini
+echo '* Restarting MCE...'
+/etc/init.d/mce restart
+exit 0

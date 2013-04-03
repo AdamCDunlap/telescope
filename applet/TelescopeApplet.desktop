@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Telescope Applet
+Icon=telescope
+Category=permanent
+Type=default
+X-Path=libtelescopeapplet.so
