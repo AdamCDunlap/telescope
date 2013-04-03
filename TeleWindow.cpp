@@ -173,13 +173,19 @@ bool TeleWindow::show()
 
     _shown = true;
 
+    Thumbnail *prevActiveThumbnail = _activeThumbnail;
+
     Window activeWindow = XTools::activeWindow();
 
-    Thumbnail *prevActiveThumbnail = _activeThumbnail;
-    _activeThumbnail = 0;
-    for (LinkedList<Thumbnail*>::Iter i = _thumbnails.head(); i; ++i)
-        if ((*i)->clientWindow() == activeWindow)
-            _activeThumbnail = *i;
+    if (activeWindow != 0)
+    {
+        _activeThumbnail = 0;
+        for (LinkedList<Thumbnail*>::Iter i = _thumbnails.head(); i; ++i)
+            if ((*i)->clientWindow() == activeWindow)
+                _activeThumbnail = *i;
+    }
+    else
+        _activeThumbnail = *_thumbnails.head();
 
     if (_activeThumbnail != prevActiveThumbnail)
     {

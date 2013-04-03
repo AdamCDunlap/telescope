@@ -369,7 +369,7 @@ Window XTools::activeWindow()
         (unsigned char**)&property
     );
 
-    if (status != Success)
+    if (status != Success || property == NULL)
         return 0;
 
     Window result = *property;
