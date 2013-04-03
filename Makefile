@@ -9,10 +9,10 @@
 
 all: telescope
 
-#DEFINES = -DDESKTOP -DDBUS
-DEFINES = -DMAEMO4 -DDBUS
+DEFINES = -DDESKTOP -DDBUS
+#DEFINES = -DMAEMO4 -DDBUS
 
-LAUNCHER = 1
+LAUNCHER = 0
 
 SOURCES = TeleWindow.cpp    \
           Main.cpp          \
@@ -63,8 +63,8 @@ SHAREFILES += header-left.png    \
 
 CONFFILES = telescope.conf telescope.keys
 
-CFLAGS += -Wall -Werror -O2 $(DEFINES) `pkg-config --cflags $(DEPS)` -pthread
-# CFLAGS += -Wall -Werror -g $(DEFINES) `pkg-config --cflags $(DEPS)` -pthread
+CFLAGS += -Wall -O2 $(DEFINES) `pkg-config --cflags $(DEPS)` -pthread
+# CFLAGS += -Wall -g $(DEFINES) `pkg-config --cflags $(DEPS)` -pthread
 
 
 OBJS = $(SOURCES:%.cpp=%.o)
@@ -89,7 +89,6 @@ clean:
 
 install: telescope telescope-svc $(SHAREFILES) $(CONFFILES)
 	cp telescope $(DESTDIR)/usr/bin/
-	cp telescope-svc $(DESTDIR)/etc/init.d/
 	mkdir -p $(DESTDIR)/usr/share/telescope
 	cp -r $(SHAREFILES) $(DESTDIR)/usr/share/telescope/
 	cp $(CONFFILES) $(DESTDIR)/etc/
